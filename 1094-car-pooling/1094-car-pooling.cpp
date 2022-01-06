@@ -2,19 +2,21 @@ class Solution {
 public:
     bool carPooling(vector<vector<int>>& trips, int capacity) 
     {
-         map<int,int>m;
+         vector<int>v(1001, 0);
+        int mx= INT_MIN;
         for(auto &x:trips)
         {
              int p=x[0],q = x[1], r =x[2];
-             m[q] += p;
-             m[r] -= p;
+             v[q] += p;
+             v[r] -= p;
+            mx = max(mx, max(q,r));
         }
         int val=0;
-        for(auto &x:m)
-        {
-            val +=x.second;
-            if(val>capacity) return false;
-        }
+       for(int i=0; i<=mx; i++)
+       {
+           val+=v[i];
+           if(capacity < val) return false;
+       }
         return true;
     }
 };

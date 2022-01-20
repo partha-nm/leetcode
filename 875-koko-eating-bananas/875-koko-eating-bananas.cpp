@@ -1,6 +1,6 @@
 class Solution {
 public:
-    bool isValid(int mid, vector<int>piles, int h)
+    bool isValid(int mid, vector<int>&piles, int h)
     {
         long long int res=0;
         for(int i=0; i<piles.size(); i++)
@@ -16,11 +16,7 @@ public:
          int low = 1;
          int high = *max_element(piles.begin(), piles.end());
          int ans = high;
-        // if(piles.size() == 1)
-        // {
-        //     if(piles[0] % h) return piles[0]/h+1;
-        //     return  piles[0]/h;
-        // }
+    
          while(low<=high)
          {
              int mid = low + (high-low)/2;

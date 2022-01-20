@@ -13,9 +13,9 @@ public:
     }
     int minEatingSpeed(vector<int>& piles, int h) 
     {
-         long long int low = 1;
-         long long int high = *max_element(piles.begin(), piles.end());
-         long long int ans = high;
+         int low = 1;
+         int high = *max_element(piles.begin(), piles.end());
+         int ans = high;
         // if(piles.size() == 1)
         // {
         //     if(piles[0] % h) return piles[0]/h+1;
@@ -23,7 +23,7 @@ public:
         // }
          while(low<=high)
          {
-             long long int mid = low + (high-low)/2;
+             int mid = low + (high-low)/2;
              if(isValid(mid, piles, h))
              {
                  ans = mid;

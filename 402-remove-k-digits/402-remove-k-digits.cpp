@@ -5,7 +5,7 @@ public:
       int n = num.size();
         if (n <= k) return "0";
         stack<char> s;
-        for (auto &&c : num) {
+        for (auto &c : num) {
             while (!s.empty() and k > 0 and s.top() > c) s.pop(), k--;
             if (!s.empty() or c != '0') s.push(c);
         }

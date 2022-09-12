@@ -11,7 +11,6 @@ public:
             {
                 power-=t[i];
                 score++;
-                ans = max(ans, score);
                 i++;
             }
             else if(score > 0)
@@ -21,6 +20,7 @@ public:
                 j--;
             }
             else break;
+            ans = max(ans, score);
         }
         return ans;
     }
